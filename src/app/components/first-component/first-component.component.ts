@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-first-component',
@@ -13,6 +13,8 @@ export class FirstComponentComponent {
     nome: 'Polo',
     marcar: 'gol',
   };
+
+  @Input() userIdade: number = 21;
 
   mostrarMensagem(name: String): void {
     alert(`bom dia ${name}`);

@@ -1,0 +1,43 @@
+
+<div class="class">
+  <h2>two-way-biding works!</h2>
+  <form action="">
+    <!-- ASSIM QUE VOU DIGITANDO O VALOR JA VAI SENDO GUARDADO DENTRO DA VARIAVEL AUTOMATICAMENTE -->
+    <!-- CONCEIRO DE DATA BINDING É JUSTAMENTE ISSO -->
+    <div class="DivInputs">
+        <input
+          type="text"
+
+          [(ngModel)]="data.nome"
+          name="name"
+          placeholder="Digite seu nome"
+        />
+        <input
+          type="text"
+
+          [(ngModel)]="data.sobreNome"
+          name="sobreNom"
+          placeholder="Digite seu Sobrenome"
+        />
+        <input
+          type="text"
+
+          [(ngModel)]="data.Emprego"
+          name="Emprego"
+          placeholder="Digite seu Emprego"
+        />
+    </div>
+    <input (click)="onChangedata()" type="submit" value="Enviar"/>
+  </form>
+  <!-- condição se tiver algum dado na variavel aparece a mensagem -->
+  <div *ngIf="visible && data.nome !== '' ">
+    <ul>
+      <li *ngFor="let item of data | keyvalue">{{ item.key }}: {{ item.value }}</li>
+    </ul>
+    <!-- <p>O nome é {{data.nome}}</p>
+    <p>Sobrenome {{data.sobreNome}}</p>
+    <p>Emprego {{data.Emprego}}</p> -->
+  </div>
+  <!-- <div *ngIf="name; else elseBlock">If esta ativo.</div>
+<ng-template #elseBlock>Else está ativo</ng-template> -->
+</div>

@@ -4,6 +4,7 @@
   <form action="">
     <!-- ASSIM QUE VOU DIGITANDO O VALOR JA VAI SENDO GUARDADO DENTRO DA VARIAVEL AUTOMATICAMENTE -->
     <!-- CONCEIRO DE DATA BINDING É JUSTAMENTE ISSO -->
+    <h1>{{tertarService}}</h1>
     <div class="DivInputs">
         <input
           type="text"
@@ -40,4 +41,19 @@
   </div>
   <!-- <div *ngIf="name; else elseBlock">If esta ativo.</div>
 <ng-template #elseBlock>Else está ativo</ng-template> -->
+<div>
+  <ul>
+    <li *ngFor="let usuario of usuarios">{{usuario}}</li>
+  </ul>
+  <button (click)="adicionarUsuarios()">Adicionar usuario</button>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let usuarioObj of usuariosObj">{{usuarioObj.nome}}</li>
+    <li *ngFor="let usuarioObj of usuariosObj">{{usuarioObj.sobreNome}}</li>
+    <li *ngFor="let usuarioObj of usuariosObj">{{usuarioObj.Emprego}}</li>
+  </ul>
+  <button (click)="adicionarUsuariosObg()">Adicionar usuario</button>
+</div>
+
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ListService } from '../../services/list.service';
 
 export interface Animal {
   name?: string;
@@ -11,7 +12,19 @@ export interface Animal {
   styleUrl: './list-render.component.css',
 })
 export class ListRenderComponent {
-  dados = ['Felipe gomes', 'luana gomes', 'Railda Gomes', 'Odilon Firmuino'];
+  constructor(private listService: ListService) {}
+
+  removeAnimal(animal: Animal) {
+    console.log('removendo animal!');
+    this.animais = this.listService.remove(this.animais, animal);
+  }
+
+  // dados = ['Felipe gomes', 'luana gomes', 'Railda Gomes', 'Odilon Firmuino'];
+  dados = this.listService.getDados();
+
+  adicionarD() {
+    this.listService.adicionarDados('Joao');
+  }
 
   //usando a interface que fiz em cima
   animais: Animal[] = [

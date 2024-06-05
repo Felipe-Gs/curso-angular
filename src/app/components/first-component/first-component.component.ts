@@ -14,9 +14,22 @@ export class FirstComponentComponent {
     marcar: 'gol',
   };
 
+  getName(): void {
+    alert(this.name);
+  }
+
+  setName(name: string): void {
+    if (name != '') this.name = name;
+  }
+
   @Input() userIdade: number = 21;
 
   mostrarMensagem(name: String): void {
     alert(`bom dia ${name}`);
+  }
+
+  nomeCompleto: string = '';
+  mostrarMensagemTeste() {
+    alert(`bom dia ${this.nomeCompleto}`);
   }
 }

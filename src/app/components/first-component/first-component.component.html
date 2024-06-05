@@ -1,9 +1,18 @@
-<p>first-component works!</p>
-<h1>Felipe gomes</h1>
-<h2>Nome: {{name}}</h2>
-<h2>idade: {{idade}}</h2>
-<h2>Numeros: {{numeros}}</h2>
-<h2>Carro: {{carros.marcar}}</h2>
-<h2>Idade vinda do app component {{idade}}</h2>
-<button (click)="mostrarMensagem(name)">Mostrar Mensagem</button>
+<div class="class">
+  <p>first-component works!</p>
+  <h1>Felipe gomes</h1>
+  <h2>Nome: {{name}}</h2>
+  <h2>idade: {{idade}}</h2>
+  <h2>Numeros: {{numeros}}</h2>
+  <h2>Carro: {{carros.marcar}}</h2>
+  <h2>Idade vinda do app component {{idade}}</h2>
+  <h2>Nome vindo do input {{nomeCompleto}}</h2>
+  <h1>Felipe gomes teste angular</h1>
+  <input [(ngModel)]="nomeCompleto" placeholder="Digite seu nome completo" type="text" name="MeuInputTeste">
+  <button (click)="mostrarMensagemTeste()" >Mostrar nome digitado no input</button>
+  <button (click)="mostrarMensagem(name)">Mostrar Mensagem</button>
+  <button (click)="getName()">GetNome</button>
+  <button (click)="setName(nomeCompleto)">SetNome</button>
+
+</div>
 

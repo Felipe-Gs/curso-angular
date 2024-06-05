@@ -3,7 +3,7 @@
   <p *ngFor="let dado of dados">{{dado}}</p>
   <p>{{dadosObj.nome}}</p>
   <ul>
-    <li *ngFor="let animal of animais">
+    <li *ngFor="let animal of animals">
       Animal: {{animal.name |uppercase}}
       Type: {{animal.type}}
       <button (click)="removeAnimal(animal)">Remover animal</button>
@@ -22,7 +22,7 @@
         <p>Calcula a porcentagem apenas com o operador percent</p>
         <p>{{ 0.1234 | percent }}</p>
     </div>
-
+    <p>{{animals}}</p>
   </div>
 
 </div>

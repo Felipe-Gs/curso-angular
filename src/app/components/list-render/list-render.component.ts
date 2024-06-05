@@ -12,7 +12,9 @@ export interface Animal {
   styleUrl: './list-render.component.css',
 })
 export class ListRenderComponent {
-  constructor(private listService: ListService) {}
+  constructor(private listService: ListService) {
+    this.getAniamls();
+  }
 
   removeAnimal(animal: Animal) {
     console.log('removendo animal!');
@@ -36,4 +38,10 @@ export class ListRenderComponent {
   testandoOpipeOperator = 'Testando o pipe';
 
   hoje: Date = new Date();
+
+  animals: Animal[] = [];
+
+  getAniamls(): void {
+    this.listService.getAll().subscribe((animals) => (this.animals = animals));
+  }
 }
